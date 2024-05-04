@@ -87,9 +87,18 @@ class FinalWin(QWidget):
         #    else:
         #        return txt_res5
     ''' створює графічні елементи '''
+   ''' створює графічні елементи '''
     def initUI(self):  
-        pass
+        self.work_text = QLabel(txt_workheart + self.results())
+        self.index_text = QLabel(txt_index + str(self.index))
+ 
+        self.layout_line = QVBoxLayout()
+        self.layout_line.addWidget(self.index_text, alignment = Qt.AlignCenter)
+        self.layout_line.addWidget(self.work_text, alignment = Qt.AlignCenter)
+        self.setLayout(self.layout_line)
  
     ''' встановлює, як виглядатиме вікно (напис, розмір, місце) '''
     def set_appear(self):
-        pass
+        self.setWindowTitle(txt_finalwin)
+        self.resize(win_width, win_height)
+        self.move(win_x, win_y)
